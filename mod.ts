@@ -1,12 +1,16 @@
 // import * as expressive from 'https://raw.githubusercontent.com/NMathar/deno-express/master/mod.ts'
-import  { Application, Router } from 'https://deno.land/x/oak@v5.3.1/mod.ts';
+import  { Application, Router, send } from 'https://deno.land/x/oak@v5.3.1/mod.ts';
 import { mongoClient } from './db.ts';
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
+import * as flags from "https://deno.land/std/flags/mod.ts";
 
 import  UserClass,{User} from './models/portfolio.ts';
 
+const {args} = Deno
+const DEFAULT_PORT = 8000 ;
+const argPort = flags.parse(args).port;
+const PORT = argPort ? Number(argPort) : DEFAULT_PORT ;
 
-const PORT = 8000;
 
 console.log('MONGO DB CONNECTED!',mongoClient.listDatabases().then((item)=>console.log('item',item)));
 console.log('Admin:=',mongoClient.database('local'))
@@ -102,15 +106,25 @@ router.get('/singleUser/:userId',async (ctx)=>{
 // })
 
 
+app.use(async (context) => {
+    await send(context, context.request.url.pathname, {
+      root: `${Deno.cwd()}/public`,
+      index: "index.html",
+    });
+  });
+  
 
-
-
-if(import.meta.main){
     app.listen({
         port:PORT
     });
-    console.log('IM:',import.meta)    
-}
+
+
+// if(import.meta.main){
+//     app.listen({
+//         port:PORT
+//     });
+//     console.log('IM:',import.meta)    
+// }
 
 
 
