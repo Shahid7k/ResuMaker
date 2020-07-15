@@ -1,0 +1,186 @@
+
+.navbar{
+    color:whitesmoke;
+    background: rgba(0, 0, 0, 0.397);
+}
+.navbar .nav-items{
+    list-style: none ;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+body{
+    /* background: url('https://st.depositphotos.com/3484379/5101/v/950/depositphotos_51013201-stock-illustration-light-grey-background.jpg');
+    background-size: cover; */
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23d3eff4' fill-opacity='0.26'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+/* ----------------------------------Utility classes by Shahid----------------- */
+
+
+.font11{
+    font-size: 1.1rem;
+}
+.font12{
+    font-size: 1.2rem;
+}
+.font13{
+    font-size: 1.3rem;
+}
+.font14{
+    font-size: 1.4rem;
+}
+.font15{
+    font-size: 1.5rem;
+}
+.font16{
+    font-size: 1.6rem;
+}
+.font17{
+    font-size: 1.7rem;
+}
+.font18{
+    font-size: 1.8rem;
+}
+.font19{
+    font-size: 1.9rem;
+}
+.font2{
+    font-size: 2rem;
+}
+.font09{
+    font-size: 0.9rem;
+}
+.font08{
+    font-size: 0.8rem;
+}
+.font07{
+    font-size: 0.7rem;
+}
+.font06{
+    font-size: 0.6rem;
+}
+.font05{
+    font-size: 0.5rem;
+}
+.font04{
+    font-size: 0.4rem;
+}
+.font03{
+    font-size: 0.3rem;
+}
+.font02{
+    font-size: 0.2rem;
+}
+.font01{
+    font-size: 0.1rem;
+}
+.fl-r{
+    float: right;
+}
+.fl-l{
+    float: left;
+}
+
+
+.dancing-script{
+    font-family: 'Dancing Script', cursive;
+}
+.permanent-marker{
+    font-family: 'Permanent Marker', cursive;
+}
+.quick-sand{
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* -------------------------------------Utility Classes by Shahid ---------------------------------------------------- */
+
+
+.card{
+    width: 30vh !important;
+}
+.card-bg {
+    /* background : linear-gradient(rgb(112, 112, 112) , rgba(255, 255, 255, 0.075)) !important; */
+    background : linear-gradient(rgb(196, 232, 238) , rgba(225, 237, 252, 0.171)) !important;
+    opacity: 1;
+}
+.bg-transparent{
+    background: rgba(0,0,0,0) !important;
+}
+
+.display-pic{
+    height: 20vh;
+    width: 20vh !important;
+    margin: 0px 25%;
+    
+}
+.icon-logo{
+    height: 45px;
+}
+
+
+.cv-container{
+    width: 100% !important;
+}
+.cv-headings{
+    padding-left: 2%;
+}
+.cv-content{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#addNew { 
+    background: rgba(0,0,0,0.1);
+}
+
+
+.margin-y-bar{
+    margin-top: 310%;
+}
+
+
+.template-ss{
+    height: 40vh;
+    width: 30vh;
+    transition: 1.5s;
+}
+
+.template-ss:hover{
+    transform: scale(2.1);
+}
+
+
+/* =======================TEMPLATES================================== */
+.bg-temp-1r{
+    background: url("https://i.pinimg.com/736x/e8/c1/fa/e8c1fadfb0f7db343b4bc559d81132c4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3em !important;
+}
+.bg-temp-1r .cv-headings{
+}
+.bg-temp-1l{
+    background-color: rgb(23, 51, 104) ;
+    color: white;
+}
+.temp1-head{
+    text-align: right;
+}
+
+
+.bg-temp-2r{
+    background: url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg");
+    font-family: 'Quicksand', sans-serif;
+    background-size: cover;
+}
+.bg-temp-2l{
+    background-color: rgb(219, 59, 59);
+    background-size: cover;
+    color: rgb(255, 255, 255);
+}

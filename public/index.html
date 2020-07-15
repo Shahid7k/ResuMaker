@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+
+</head>
+<body onload="onPageLoad()"  >
+    
+    <nav class="navbar sticky-top m-0 p-0 ">
+        <a class="font17 quick-sand" href="./index.html">ResuMaker</a>
+        <ul class='d-flex nav-items '>
+            <li class="mx-3 px-2" id='nav-home' onclick="navigatePage('home')">
+              Home
+            </li>
+            <li class="mx-3 px-2" id= 'nav-addNew' onclick="navigatePage('addNew')">
+                Add Yours
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container" >
+         <div id='home' >
+            <div id="onlyHomeContents">
+                <div class="font18 permanent-marker">
+                    Create professional resumes, CV and bio-data online for free, in minutes. Simply fill in your details and generate beautiful PDF and HTML resumes!
+                </div>
+                <br>
+                <div class="text-center p-0 m-0 font17">
+                    <input type="text" id='search-input'  >
+                    <button class="btn btn-info font17 p-2" onclick="filterUsers()">  Search </button>
+                </div>
+                <div class="font12 text-center">
+                    You can search w.r.t. Name or the skills you're looking for.
+                </div>
+                <!-- <button class="btn btn-danger" onclick="getUsers()" >Get all</button> -->
+            </div>
+            <div id='homeContents' class="d-flex container mt-5"></div>
+    
+        </div>
+        <form id='addNew' class="font-weight-bold text-center w-100 form-group">
+            <div class="font04">
+              💪👌🏆💾🖥📑📰💼📈  💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 
+            </div>
+            <span class="font19 font-weight-lighter permanent-marker">  Fill up the fields and get your resume ready! </span>
+           <!-- <div class="font04">
+              💪👌🏆💾🖥📑📰💼📈  💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 💪👌🏆💾🖥📑📰💼📈 
+           </div> -->
+            <hr/>
+            <div class="d-inline-flex ">
+                <!-- <label >First Name</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6 mx-2" required placeholder="First Name" id='cv-fname' >
+        
+                <!-- <label >Last Name</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6 mx-2" required placeholder="Last Name" id='cv-lname' >
+            </div>
+            <br>
+            <div class="d-inline-flex text-center m-3">
+                <!-- <label >Email ID</label> -->
+                <input type="email" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6 mx-2" required placeholder="Email ID" id='cv-email' >
+            
+                <!-- <label >Phone Number</label> -->
+                <input type="number" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Phone Number" id='cv-phone' >
+            </div>
+            <div class="font-weight-normal">
+                <label class="font-weight-bold">Gender : </label>
+                <input type='radio' class="m-1" name="gender" id='male' value="male" >Male
+                <input type='radio' class="m-1" name="gender" id='female' value="female" >Female
+                <input type='radio' class="m-1" name="gender" id='other' value="other" >Other
+            </div>
+            <div>
+                Date Of Birth : 
+                <input type="date" class="border border-secondary rounded p-1" id="cv-dob" required>
+            </div>
+            <hr class="w-25 mb-0 p-0">
+            <div class="mx-3 mb-4 font11">
+                <span class="">Education: </span>
+                <hr class="w-25 mt-0 p-0">
+                <table class="font09 font-weight-normal text-center container">
+                    <tr class=' m-3'>
+                        <td class="py-2 px-5">
+                                <label class="font-weight-bold">10th Grade or Equivalent :</label>
+                        </td>
+                        <td>
+                            Your score:
+                            <input type="number"  step="0.01" min="0" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-3" id="cv-ed-10"  >
+                        </td>
+                        <td>
+                            Max score:
+                            <input type="number"  step="0.01" min="0" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-3" id="cv-ed-max-10"  >
+                        </td>
+                        <td>
+                            Year of Completion
+                            <input type="number" min="1980" class="border border-secondary rounded p-1 col-lg-3" id="cv-yr-10" >
+                        </td>
+                    </tr>
+                    <tr class=' m-3'>
+                        <td class="py-2 px-5">
+                                <label class="font-weight-bold">12th Grade or Equivalent :</label>
+                        </td>
+                        <td>
+                            Your score:
+                            <input type="number"  step="0.01" min="0" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-3" id="cv-ed-12"   >
+                        </td>
+                        <td>
+                            Max score:
+                            <input type="number"  step="0.01" min="0" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-3" id="cv-ed-max-12"   >
+                        </td>
+                        <td>
+                            Year of Completion
+                            <input type="number"  min="1980" min="0" class="border border-secondary rounded p-1 col-lg-3" id="cv-yr-12" >
+                        </td>
+                    </tr>
+                    <tr class=' m-3'>
+                        <td class="py-2 px-5">
+                                <label class="font-weight-bold">Degree or Equivalent :</label>
+                        </td>
+                        <td>
+                            Your score:
+                            <input type="number"  step="0.01" min="0"  class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-3" id="cv-ed-deg"  >
+                        </td>
+                        <td>
+                            Max score:
+                            <input type="number"  step="0.01" min="0" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-3" id="cv-ed-max-deg"  >
+                        </td>
+                        <td>
+                            Year of Completion
+                            <input type="number"   min="1980" min="0" class="border border-secondary rounded p-1 col-lg-3" id="cv-yr-deg" >
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="font-weight-normal">
+                <label class="font-weight-bold">Experienced ? : </label>
+                <input type='radio' class="m-1" name="experience-flag" id='male' value="yes" onclick="toggleExpYears(true)" >Yes
+                <input type='radio' class="m-1" name="experience-flag" id='female' value="no" onclick="toggleExpYears(false)" >No
+                <input type="number" class=" border border-secondary p-2 rounded m-1 col-1" id='cv-experience-years' placeholder="years">
+            </div>
+            <div class=" m-3 ">
+                <!-- <label >About</label> -->
+                <textarea type="text" rows=4 class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Write about your self..." id='cv-about' ></textarea>
+            </div>
+            <div class=" m-3 ">
+                <!-- <label >Hobbies</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Tell us your hobbies " id='cv-hobbies' >
+            </div>
+            <div class=" m-3 ">
+                <!-- <label >Hobbies</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Your technical skills " id='cv-skillset' >
+            </div>
+            <div class=" m-3 ">
+                <!-- <label >Hobbies</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Languages known..." id='cv-languages' >
+            </div>
+            <div class=" m-3 ">
+                <!-- <label >Strengths</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Write about your strengths" id='cv-strengths' >
+            </div>
+            <div class=" m-3 ">
+                <!-- <label >Weaknesses</label> -->
+                <input type="text" class="border border-secondary p-2 rounded col-sm-6 col-xs-12 col-lg-6" required placeholder="Write about your weaknesses" id='cv-weaknesses' >
+            </div>
+
+            <div class="">
+                 Select the template you want : 
+                <br>
+                <small>(hover on the image to enlarge)</small>
+                <br>
+                1.<input type='radio' class="m-1" name="template" id='1' value="1" >
+                <img class="template-ss mx-5" id="temp1-ss"   src="./images/temp-1.jpg" />
+                <!-- <br> -->
+                2.<input type='radio' class="m-1" name="template" id='2' value="2" >
+                <img class="template-ss mx-5" id="temp1-ss"   src="./images/temp-2.jpg" />
+                
+            </div>
+            
+
+            <hr>
+            <input type="submit" class="btn btn-success" onclick="submitFormData()" value="Submit" >
+        </form>
+
+    </div>
+
+
+    <script src='./js/index.js' ></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>
