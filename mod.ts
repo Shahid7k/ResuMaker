@@ -2,6 +2,8 @@
 import  { Application, Router, send } from 'https://deno.land/x/oak@v5.3.1/mod.ts';
 import { mongoClient } from './db.ts';
 import * as path from 'https://deno.land/std/path/mod.ts';
+import { serve } from "https://deno.land/std@0.57.0/http/server.ts";
+
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import * as flags from "https://deno.land/std/flags/mod.ts";
 
@@ -108,10 +110,10 @@ router.get('/singleUser/:userId',async (ctx)=>{
 
 
 app.use(async (context) => {
-    const myPath = 
-    console.log('PATH : ',)
-    console.log('CONTEXTURL',typeof context.request.url.pathname," -------- ",context.request.url.pathname)
-    await send(context, ''+context.request.url.pathname, {
+    const myPath = path.join( context.request.url.pathname )
+    console.log('PATH : ',myPath , typeof myPath)
+    // console.log('CONTEXTURL',typeof context.request.url.pathname," -------- ",context.request.url.pathname)
+    await send(context, myPath, {
       root: `${Deno.cwd()}/public`,
       index: "index.html",
     });
