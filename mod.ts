@@ -1,6 +1,7 @@
 // import * as expressive from 'https://raw.githubusercontent.com/NMathar/deno-express/master/mod.ts'
 import  { Application, Router, send } from 'https://deno.land/x/oak@v5.3.1/mod.ts';
 import { mongoClient } from './db.ts';
+import * as path from 'https://deno.land/std/path/mod.ts';
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import * as flags from "https://deno.land/std/flags/mod.ts";
 
@@ -107,6 +108,8 @@ router.get('/singleUser/:userId',async (ctx)=>{
 
 
 app.use(async (context) => {
+    const myPath = 
+    console.log('PATH : ',)
     console.log('CONTEXTURL',typeof context.request.url.pathname," -------- ",context.request.url.pathname)
     await send(context, ''+context.request.url.pathname, {
       root: `${Deno.cwd()}/public`,
