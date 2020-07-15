@@ -1,5 +1,6 @@
 // import * as expressive from 'https://raw.githubusercontent.com/NMathar/deno-express/master/mod.ts'
-import  { Application, Router, send } from 'https://deno.land/x/oak@v5.3.1/mod.ts';
+import  { Application, Router, send, Context } from 'https://deno.land/x/oak@v5.3.1/mod.ts';
+export { Context, send };
 import { mongoClient } from './db.ts';
 import * as path from 'https://deno.land/std/path/mod.ts';
 import { serve } from "https://deno.land/std@0.57.0/http/server.ts";
@@ -8,6 +9,7 @@ import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import * as flags from "https://deno.land/std/flags/mod.ts";
 
 import  UserClass,{User} from './models/portfolio.ts';
+import { staticFileMiddleware } from './staticFileMiddleware.ts';
 
 const {args} = Deno
 const DEFAULT_PORT = 8000 ;
@@ -15,8 +17,8 @@ const argPort = flags.parse(args).port;
 const PORT = argPort ? Number(argPort) : DEFAULT_PORT ;
 
 
-console.log('MONGO DB CONNECTED!')
 // mongoClient.listDatabases().then((item)=>console.log('item',item)));
+
 
 
 
@@ -71,7 +73,7 @@ router.get('/',(ctx)=>{
 
 
 router.post('/create',async (ctx)=>{
-
+    
     const value = await ctx.request.body();
     console.log('Value : ',value)
     const msg = await user.createUser(value.value)
@@ -99,8 +101,8 @@ router.get('/singleUser/:userId',async (ctx)=>{
     // console.log('UserDets:',userDets)
     if(userDets.length) ctx.response.body={user:userDets[0],error:false}
     else ctx.response.body = {error:true}
-
-
+    
+    
 })
 
 
@@ -109,17 +111,16 @@ router.get('/singleUser/:userId',async (ctx)=>{
 // })
 
 
-app.use(async (context) => {
-    const myPath = path.join( context.request.url.pathname )
-    console.log('PATH : ',myPath , typeof myPath)
-    // console.log('CONTEXTURL',typeof context.request.url.pathname," -------- ",context.request.url.pathname)
-    await send(context, myPath, {
-      root: `${Deno.cwd()}/public`,
-      index: "index.html",
-    });
-  });
-  
-
+// app.use(async (context) => {
+    //     const myPath = path.join( context.request.url.pathname )
+    //     console.log('PATH : ',myPath , typeof myPath)
+    //     // console.log('CONTEXTURL',typeof context.request.url.pathname," -------- ",context.request.url.pathname)
+    
+    //     if()
+    //   });
+    
+    app.use(staticFileMiddleware)
+    
     app.listen({
         port:PORT
     });

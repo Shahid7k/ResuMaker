@@ -4,6 +4,7 @@ const DENO_API_URI :string= "mongodb+srv://Shahid:Professional7@deno-portfolio.4
 
 const mongoClient = new MongoClient();
 mongoClient.connectWithUri("mongodb+srv://Shahid:Professional7@deno-portfolio.4bf5q.mongodb.net/test")
+console.log('MONGO DB CONNECTED!!!')
 
 const db = mongoClient.database('users')
 
