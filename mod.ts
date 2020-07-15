@@ -12,8 +12,8 @@ const argPort = flags.parse(args).port;
 const PORT = argPort ? Number(argPort) : DEFAULT_PORT ;
 
 
-console.log('MONGO DB CONNECTED!',mongoClient.listDatabases().then((item)=>console.log('item',item)));
-console.log('Admin:=',mongoClient.database('local'))
+console.log('MONGO DB CONNECTED!')
+// mongoClient.listDatabases().then((item)=>console.log('item',item)));
 
 
 
@@ -107,7 +107,8 @@ router.get('/singleUser/:userId',async (ctx)=>{
 
 
 app.use(async (context) => {
-    await send(context, context.request.url.pathname, {
+    console.log('CONTEXTURL',typeof context.request.url.pathname," -------- ",context.request.url.pathname)
+    await send(context, ''+context.request.url.pathname, {
       root: `${Deno.cwd()}/public`,
       index: "index.html",
     });
@@ -117,6 +118,7 @@ app.use(async (context) => {
     app.listen({
         port:PORT
     });
+    console.log("API running on PORT:",PORT)
 
 
 // if(import.meta.main){

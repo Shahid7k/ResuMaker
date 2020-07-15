@@ -14,7 +14,7 @@ const card = (user) => {
         alt="user-pic">
         <div class="card-body">
           <h5 class="card-title">${user.fname+" "+user.lname}</h5>
-          <div class=' font11 m-0 p-0'>${user.about.substring(0,50)+"..."}<br class="m-0 p-0" ><div class="font15">Skills:${user.skillset}</div></div>
+          <div class=' font11 m-0 p-0'>${user.about.substring(0,50)+"..."}<br class="m-0 p-0" ><div class="font13">Skills:${user.skillset}</div></div>
          <button onclick="goToSingleCV('${user._id.$oid}')" class="btn btn-primary">View Profile </button>
         
           </div>
