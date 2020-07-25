@@ -1,9 +1,8 @@
 import { MongoClient,ObjectId } from 'https://deno.land/x/mongo@v0.8.0/mod.ts';
-
-const DENO_API_URI :string= "mongodb+srv://Shahid:Professional7@deno-portfolio.4bf5q.mongodb.net/test";
+import {MONGO_URI} from './keys.ts';
 
 const mongoClient = new MongoClient();
-mongoClient.connectWithUri("mongodb+srv://Shahid:Professional7@deno-portfolio.4bf5q.mongodb.net/test")
+mongoClient.connectWithUri(MONGO_URI)
 console.log('MONGO DB CONNECTED!!!')
 
 const db = mongoClient.database('users')
