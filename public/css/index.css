@@ -95,11 +95,16 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
-/* -------------------------------------Utility Classes by Shahid ---------------------------------------------------- */
+/* -------------------------------------Utility Classes by Shahid ^ /\ /\ /\ /\ /\ /\ ---------------------------------------------------- */
 
+#logo-name{
+    text-shadow: rgb(101, 46, 104) 2px 2px 3px;
+    font-weight: bold;
+    color: rgb(47, 218, 203);
+}
 
 .card{
-    width: 30vh !important;
+    width: 35vh !important;
 }
 .card-bg {
     /* background : linear-gradient(rgb(112, 112, 112) , rgba(255, 255, 255, 0.075)) !important; */

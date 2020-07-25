@@ -8,13 +8,13 @@ const card = (user) => {
     // console.log('NameCard',user._id)
     const image = user.gender==="male" ? "https://image.shutterstock.com/image-vector/management-avatar-user-profile-vector-600w-288186182.jpg" : user.gender==="female" ? "https://en.pimg.jp/041/811/938/1/41811938.jpg" : "https://previews.123rf.com/images/ronnarid/ronnarid1507/ronnarid150700051/42829771-lgbt-avatar-user-profile-vector-illustration-white-background.jpg"
     return `
-    <div class="card card-bg m-3"  style="width: 18rem;">
+    <div class="card card-bg m-2"  style="width: 18rem;">
         <img class="card-img-top display-pic p-3 rounded-circle" 
         src=${image} 
         alt="user-pic">
         <div class="card-body">
           <h5 class="card-title">${user.fname+" "+user.lname}</h5>
-          <div class=' font11 m-0 p-0'>${user.about.substring(0,50)+"..."}<br class="m-0 p-0" ><div class="font13">Skills:${user.skillset}</div></div>
+          <div class=' font11 m-0 p-0'>${user.about.substring(0,50)+"..."}<hr class="m-0 p-1"><div class="font12 quick-sand">Skills:${user.skillset.substring(0,50)+"..."} <hr class="m-0 p-0"> </div></div>
          <button onclick="goToSingleCV('${user._id.$oid}')" class="btn btn-primary">View Profile </button>
         
           </div>
